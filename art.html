@@ -1,0 +1,137 @@
+<!-- started with bootstrap template from here: https://getbootstrap.com/docs/4.3/getting-started/introduction/#js -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/StarterTemplate--Bootstrap-files/starter-template.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- my css -->
+    <link rel="stylesheet" href="assets/css/my_own_style.css">
+
+
+    <title>Erik's Website</title>
+
+</head>
+<body>
+
+<!-- nav code adapted from https://getbootstrap.com/docs/4.3/examples/starter-template/  -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="music.html">Music</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="art.html">Art</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="jumbotron-fluid my-jumbotron-class">
+    <h1 class="hero-text">Erik's Website</h1>
+</div>
+
+<main role="main" class="container">
+    <br>
+    <div class="row">
+        <div class="col-sm">
+            <h3>Before the Skies Turned Gray</h3>
+            <p>
+                I painted this while listening to the song Jet Pilot by System of a Down and the music
+                definitely inspired the painting. Building from the lyrics of the song, I showed
+                gathering clouds and a stark black line that represents a jet plane.
+            </p>
+            <img src="assets/images/before-the-skies-turned-gray-no-1.jpg" class="img-responsive-col" alt="painting">
+            <br>
+        </div>
+
+        <div class = "col-sm">
+            <h3> Purple Desert Darkness</h3>
+            <p>
+                This one was also inspired by music, though if I honest I don't exactly recall what music.
+                It may have been the album OK Computer by Radiohead. There's a cold beauty to that album,
+                which I think comes across in the painting.
+            </p>
+            <img src="assets/images/purple-desert-darkness.jpg" alt="a painting" class = "img-responsive-col">
+        </div>
+        <!--    <br>-->
+    </div>
+
+    <div class="my-form-style" style="border-style: solid; padding: 5px">
+        <h2> I take requests!</h2>
+        <p> Use the form below to request a painting. Suggest music for inspiration and a few colors you'd like me to use. I'll paint it and email you a photo.</p>
+        <form  method="POST" >
+            <div class="row">
+                <div class="col-sm">
+                    <label for="music">Music</label>
+                    <input type = "text" name="music" id="music">
+                </div>
+                <div class="col-sm">
+                    <label for="colors">Color(s)</label>
+                    <input type = "text" name="colors" id="colors">
+                </div>
+
+                <div class="col-sm">
+                    <label for="email">email</label>
+                    <input type = "email" name="email" id="email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <label for="comments">comments</label>
+                    <textarea name="comments" id="comments" rows="7"> </textarea> <!--columns="50"-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input  type="submit" value="Submit">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="alert alert-success" role="alert">
+        This message will tell you when you have successfully submitted the form.
+    </div>
+
+    <div class="alert alert-warning" role="alert">
+        This message will tell you when something went wrong with the form submission
+    </div>
+    <br>
+    <br>
+
+</main>
+
+
+
+<footer class = "site-footer">
+
+    <div class="container">
+        <p>Copyright Erik Kristofer Anderson 2019</p>
+    </div>
+
+</footer>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

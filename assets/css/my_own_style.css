@@ -1,0 +1,76 @@
+.img-responsive {
+  display: inline;
+  max-width: 50%;
+  height: auto;
+}
+
+.img-responsive-col {
+  display: block;
+  max-width: 80%;
+  height: auto;
+}
+
+.row .col-sm {
+  color: #595950;
+}
+
+.row2 .col-sm {
+  color: black;
+}
+
+.i-like-music-class {
+  color: #595950;
+}
+
+.container {
+  background: #D6D5E5;
+}
+
+footer .container {
+  background: #9AE2D7;
+}
+
+.site-footer {
+  background: #9AE2D7;
+  text-align: center;
+}
+
+.jumbotron-fluid {
+  background-color: #9AE2D7;
+}
+.jumbotron-fluid h1 {
+  color: #3F3E32;
+}
+.jumbotron-fluid h2 {
+  color: #3F3E32;
+}
+
+.my-form-style {
+  border-style: solid;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 800px) {
+  .container {
+    max-width: 800px;
+  }
+}
+.hero-text {
+  text-align: center;
+}
+
+/*# sourceMappingURL=my_own_style.css.map */

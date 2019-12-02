@@ -4,3 +4,6 @@ function myAppOnLoad() {
 
 document.addEventListener('onload', myAppOnLoad);
 
+document.getElementById("contact").addEventListener("submit", (e) => {
+    e.preventDefault(); //
+});

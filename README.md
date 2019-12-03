@@ -20,3 +20,8 @@ can use console.error
 can use debugger in javascript and chrome dev tools
 
 can preserve log in console and network
+
+TODO: add event listeners to make functions go when page is loaded
+
+note: skipping the more bootstrap portion for now
+

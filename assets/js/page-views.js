@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     console.log("DOM FULLY LOADED AND PARSED IN 'page-views.js'");
     incrementPageViews();
     displayPageViews();
-
+    document.getElementById("page-view-reset").addEventListener("click", resetPageViews);
 });
 
 
@@ -16,7 +16,13 @@ function displayPageViews() {
 
 }
 
+function resetPageViews() {
+    localStorage.clear();
+    document.getElementById("page-views-display").textContent =  'Tracking: you have visited this page ' +
+        '0 times.'
+    document.getElementById("page-view-reset").textContent = 'Tracking data deleted. Have a nice day!'
 
+}
 
 
 

@@ -5,5 +5,18 @@ I used the Bootstrap template found here: [https://getbootstrap.com/docs/4.3/get
 
 I also used the bootstrap example started template found here for the nav section: https://getbootstrap.com/docs/4.3/examples/starter-template/ 
 
-Notes:
-I did not use (e) in event related functions when there went unused because webstorm complained about this
+I used momentjs in the file moment.js from the website momentjs.com
+
+comment: see also https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js for a cdn version of moment.js
+
+
+I used  https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation for guidance on the form validation part
+
+
+
+notes from office hours
+can use console.error
+
+can use debugger in javascript and chrome dev tools
+
+can preserve log in console and network

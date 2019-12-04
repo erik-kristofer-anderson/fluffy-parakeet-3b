@@ -41,3 +41,10 @@ To see the instructions you need to make a (free) form reciever
 //
 //
 // document.addEventListener('onload', myAppOnLoad);
+
+
+I used code from here: https://jsfiddle.net/seamusleahy/rxeuaatw/
+to handle the fetch form submission
+
+using code from here to base the form on: https://getbootstrap.com/docs/4.3/components/forms/ 
+

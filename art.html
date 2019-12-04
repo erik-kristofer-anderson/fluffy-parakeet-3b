@@ -74,38 +74,41 @@
         <!--    <br>-->
     </div>
 
-    <div class="my-form-style" >
+
+
+    <form id="exampleForm" class="my-form-style">
         <h2> I take Suggestions!</h2>
         <p> Use the form below to suggest a painting idea. Suggest music for inspiration and a few colors you'd like me to use. If I paint it I'll send you a photo.</p>
-        <form  id="contact-form" action="https://formspree.io/mgevzpbq" method="POST" novalidate>
-            <div class="row">
-                <div class="col-sm">
-                    <label for="contact-music">Music</label>
-                    <input type = "text" name="music" id="contact-music">
-                </div>
-                <div class="col-sm">
-                    <label for="contact-colors">Color(s)</label>
-                    <input type = "text" name="colors" id="contact-colors">
-                </div>
+        <div class="row">
+            <div class="form-group col">
+                <label for="exampleInputName">Name</label>
+                <input type="email" class="form-control" id="exampleInputName">
+            </div>
+            <div class="form-group col">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">I won't share your email with anyone else.</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col">
+                <label for="exampleTextInputMusic">Music</label>
+                <input type="text" class="form-control" id="exampleTextInputMusic">
+            </div>
+            <div class="form-group col">
+                <label for="exampleTextInputColors">Colors</label>
+                <input type="text" class="form-control" id="exampleTextInputColors" >
+            </div>
+        </div>
 
-                <div class="col-sm">
-                    <label for="contact-email">email</label>
-                    <input type = "email" name="email" id="contact-email">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm">
-                    <label for="contact-comments">comments</label>
-                    <textarea name="comments" id="contact-comments" rows="7"> </textarea> <!--columns="50"-->
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <input  type="submit" value="Submit" id="my-form-button">
-                </div>
-            </div>
+        <div class="form-group">
+            <label for="exampleFormComments">Comments</label>
+            <textarea class="form-control" id="exampleFormComments" rows="3"></textarea>
+        </div>
 
-        </form>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <br>
         <div id="my-success-alert"  class="alert alert-success d-none" role="alert">
             Your submission has passed the basic validation tests.
         </div>
@@ -122,9 +125,64 @@
         <div class="alert alert-warning d-none" role="alert" id = "success-from-form-spree">
             Your response has been recieved by our server!
         </div>
-<!--        <p id = "results"></p>-->
+    </form>
 
-    </div>
+
+
+
+
+
+<!--    <div class="my-form-style" >-->
+<!--        <h2> I take Suggestions!</h2>-->
+<!--        <p> Use the form below to suggest a painting idea. Suggest music for inspiration and a few colors you'd like me to use. If I paint it I'll send you a photo.</p>-->
+<!--        <form  id="contact-form" action="https://formspree.io/mgevzpbq" method="POST" novalidate>-->
+<!--            <div class="row">-->
+<!--                <div class="col-sm">-->
+<!--                    <label for="contact-music">Music</label>-->
+<!--                    <input type = "text" name="music" id="contact-music">-->
+<!--                </div>-->
+<!--                <div class="col-sm">-->
+<!--                    <label for="contact-colors">Color(s)</label>-->
+<!--                    <input type = "text" name="colors" id="contact-colors">-->
+<!--                </div>-->
+
+<!--                <div class="col-sm">-->
+<!--                    <label for="contact-email">email</label>-->
+<!--                    <input type = "email" name="email" id="contact-email">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row">-->
+<!--                <div class="col-sm">-->
+<!--                    <label for="contact-comments">comments</label>-->
+<!--                    <textarea name="comments" id="contact-comments" rows="7"> </textarea> &lt;!&ndash;columns="50"&ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row">-->
+<!--                <div class="col">-->
+<!--                    <input  type="submit" value="Submit" id="my-form-button">-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </form>-->
+<!--        <div id="my-success-alert"  class="alert alert-success d-none" role="alert">-->
+<!--            Your submission has passed the basic validation tests.-->
+<!--        </div>-->
+
+
+<!--        <div class="alert alert-warning d-none" role="alert" id = "my-failure-alert">-->
+<!--            Invalid Submission; please try again. (Hint: all fields should be populated and the email should be valid. [todo: add email format validator])-->
+<!--        </div>-->
+
+<!--        <div class="alert alert-danger d-none" role="alert" id = "results">-->
+<!--            This is place-holder text.-->
+<!--        </div>-->
+
+<!--        <div class="alert alert-warning d-none" role="alert" id = "success-from-form-spree">-->
+<!--            Your response has been recieved by our server!-->
+<!--        </div>-->
+<!--&lt;!&ndash;        <p id = "results"></p>&ndash;&gt;-->
+
+<!--    </div>-->
 
     <br>
     <br>

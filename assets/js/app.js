@@ -73,7 +73,8 @@ function jsfiddleFormSubmit() {
     }
 
 // This is for the purpose of this demo using jsFiddle AJAX Request endpoint
-    formData.append('json', JSON.stringify({example: 'return value'}));
+    //// I don't need this
+    // formData.append('json', JSON.stringify({example: 'return value'}));
 
 // 2. Make the request
 // ================================

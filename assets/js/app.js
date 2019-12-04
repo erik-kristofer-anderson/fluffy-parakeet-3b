@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     document.getElementById("contact-form").addEventListener("submit", (e) => {
         e.preventDefault(); //
-        let formOkay = updateAlertMessages();
+        let formOkay = updateAlertMessagesUponSubmission();
         if (formOkay) {
             jsfiddleFormSubmit();
         }
@@ -32,19 +32,49 @@ function test_valid_form() {
 
 }
 
-function updateAlertMessages() {
+function updateAlertMessagesUponSubmission() {
     if (test_valid_form()) {
-        document.getElementById("my-success-alert").classList.remove("d-none");
-        document.getElementById("my-failure-alert").classList.add("d-none");
+        document.getElementById("local-validation-success-alert").classList.remove("d-none");
+        document.getElementById("local-validation-failure-alert").classList.add("d-none");
+        document.getElementById("form-spree-validation-success-alert").classList.add("d-none");
+        document.getElementById("form-spree-validation-failure-alert").classList.add("d-none");
         return true
     } else {
-        document.getElementById("my-failure-alert").classList.remove("d-none");
-        document.getElementById("my-success-alert").classList.add("d-none");
+        document.getElementById("local-validation-success-alert").classList.add("d-none");
+        document.getElementById("local-validation-failure-alert").classList.remove("d-none");
+        document.getElementById("form-spree-validation-success-alert").classList.add("d-none");
+        document.getElementById("form-spree-validation-failure-alert").classList.add("d-none");
         return false
     }
 }
 
 
+function updateAlertMessagesUponServerResponse(responseOkay) {
+    if (responseOkay) {
+        document.getElementById("local-validation-failure-alert").classList.add("d-none");
+        document.getElementById("local-validation-success-alert").classList.add("d-none");
+        document.getElementById("form-spree-validation-success-alert").classList.remove("d-none");
+        document.getElementById("form-spree-validation-failure-alert").classList.add("d-none");
+        console.log("hi this is line 49 in updateAlertMessagesUponServerResponse" +
+            " in app.js")
+    } else {
+        document.getElementById("local-validation-failure-alert").classList.add("d-none");
+        document.getElementById("local-validation-success-alert").classList.add("d-none");
+        document.getElementById("form-spree-validation-success-alert").classList.add("d-none");
+        document.getElementById("form-spree-validation-failure-alert").classList.remove("d-none");
+        console.log("hi this is line 56 in app.js in updateAlertMessagesUponServerResponse()" +
+            "because formspree did not like the submission")
+
+    }
+}
+
+
+
+// function displayFormReceivedSuccess() {
+//     document.getElementById("success-from-form-spree").classList
+//
+//
+// }
 
 
 function jsfiddleFormSubmit() {
@@ -60,22 +90,12 @@ function jsfiddleFormSubmit() {
 // 1.1 Headers
     let headers = new Headers();
 // Tell the server we want JSON back
+    ////do I need this:
     headers.set('Accept', 'application/json');
 
 // 1.2 Form Data
-// We need to properly format the submitted fields.
-// Here we will use the same format the browser submits POST forms.
-// You could use a different format, depending on your server, such
-// as JSON or XML.
-    let formData = new FormData();
-    for (let i = 0; i < formEl.length; ++i) {
-        formData.append(formEl[i].name, formEl[i].value);
-    }
+    let formData = new FormData(formEl);
 
-// This is for the purpose of this demo using jsFiddle AJAX Request endpoint
-    formData.append('json', JSON.stringify({example: 'return value'}));
-
-// 2. Make the request
 // ================================
 ////let url = '/echo/json/';
     let url = 'https://formspree.io/mgevzpbq';
@@ -96,11 +116,24 @@ function jsfiddleFormSubmit() {
         })
         // 3.2 Do something with the JSON data
         .then(function (jsonData) {
+
+
             console.log(jsonData);
+            console.log(JSON.stringify(jsonData).substr(0, 9));
+            if (JSON.stringify(jsonData).substr(0, 9) == '{"error":') {
+                console.log("hi this is an error report from line 94" +
+                    " in app.js: formspree doesn't like something");
+                updateAlertMessagesUponServerResponse(false);
+            } else if (JSON.stringify(jsonData).substr(0, 9) == '{"next":"') {
+                console.log("hi this is a success report from line 97" +
+                    " in app.js: formspree does like the form");
+                updateAlertMessagesUponServerResponse(true);
+            }
+
             console.log("hi this is line 76 in app.js");
             document.getElementById('results').innerText =
-            JSON.stringify(jsonData);
-            document.getElementById('results').classList.remove("d-none")
+            "Result from formspree: " + JSON.stringify(jsonData);
+            // document.getElementById('results').classList.remove("d-none")
             // document.getElementById("success-from-form-spree").classList.remove("d-none");
         });
 

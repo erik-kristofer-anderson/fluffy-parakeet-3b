@@ -74,29 +74,60 @@
         <!--    <br>-->
     </div>
 
-    <div class="my-form-style" >
+
+
+
+
+
+
+
+
+    <form>
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="First name">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Last name">
+            </div>
+        </div>
+    </form>
+
+
+
+
+
+    <div  class="my-form-style">
         <h2> I take Suggestions!</h2>
         <p> Use the form below to suggest a painting idea. Suggest music for inspiration and a few colors you'd like me to use. If I paint it I'll send you a photo.</p>
         <form  id="contact-form" action="https://formspree.io/mgevzpbq" method="POST" novalidate>
             <div class="row">
-                <div class="col-sm">
-                    <label for="contact-music">Music</label>
-                    <input type = "text" name="music" id="contact-music">
-                </div>
-                <div class="col-sm">
-                    <label for="contact-colors">Color(s)</label>
-                    <input type = "text" name="colors" id="contact-colors">
-                </div>
 
-                <div class="col-sm">
+                <div class="col">
+                    <label for="contact-name">name</label>
+                    <input type = "text" class="form-control" name="name" id="contact-name">
+                </div>
+                <div class="col">
                     <label for="contact-email">email</label>
-                    <input type = "email" name="email" id="contact-email">
+                    <input type = "email" class="form-control" name="email" id="contact-email">
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm">
+
+
+                <div class="col">
+                    <label for="contact-music">Music</label>
+                    <input type = "text" class="form-control" name="music" id="contact-music">
+                </div>
+                <div class="col">
+                    <label for="contact-colors">Color(s)</label>
+                    <input type = "text" class="form-control" name="colors" id="contact-colors">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
                     <label for="contact-comments">comments</label>
-                    <textarea name="comments" id="contact-comments" rows="7"> </textarea> <!--columns="50"-->
+                    <textarea name="comments" class="form-control" id="contact-comments" rows="7"> </textarea> <!--columns="50"-->
                 </div>
             </div>
             <div class="row">
@@ -106,21 +137,25 @@
             </div>
 
         </form>
-        <div id="my-success-alert"  class="alert alert-success d-none" role="alert">
+        <div id="local-validation-success-alert"  class="alert alert-success d-none" role="alert">
             Your submission has passed the basic validation tests.
         </div>
 
 
-        <div class="alert alert-warning d-none" role="alert" id = "my-failure-alert">
+        <div id = "local-validation-failure-alert" class="alert alert-warning d-none" role="alert" >
             Invalid Submission; please try again. (Hint: all fields should be populated and the email should be valid. [todo: add email format validator])
         </div>
 
-        <div class="alert alert-danger d-none" role="alert" id = "results">
+        <div id = "results" class="alert alert-danger d-none" role="alert" >
             This is place-holder text.
         </div>
 
-        <div class="alert alert-warning d-none" role="alert" id = "success-from-form-spree">
-            Your response has been recieved by our server!
+        <div class="alert alert-warning d-none" role="alert" id = "form-spree-validation-failure-alert">
+            The server found a problem with your submission. Please try agian.
+        </div>
+
+        <div class="alert alert-success d-none" role="alert" id = "form-spree-validation-success-alert">
+            Your response has been received by our server!
         </div>
 <!--        <p id = "results"></p>-->
 

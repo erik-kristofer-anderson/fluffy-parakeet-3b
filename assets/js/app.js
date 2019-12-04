@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', (e) => {
     console.log('DOM FULLY LOADED AND PARSED in app.js');
 
-    document.getElementById("contact-form").addEventListener("submit", (e) => {
+    document.getElementById("exampleForm").addEventListener("submit", (e) => {
         e.preventDefault(); //
         let formOkay = updateAlertMessages();
         if (formOkay) {
@@ -22,10 +22,11 @@ function testEmailValid() {
 }
 
 function test_valid_form() {
-    if (document.getElementById("contact-music").value === "" ||
-        document.getElementById("contact-colors").value === "" ||
-        document.getElementById("contact-email").value === "" ||
-        document.getElementById("contact-comments").value === "" ) {
+    if (document.getElementById("exampleInputName").value === "" ||
+        document.getElementById("exampleInputEmail1").value === "" ||
+        document.getElementById("exampleTextInputMusic").value === "" ||
+        document.getElementById("exampleTextInputColors").value === "" ) {
+        // id="exampleFormComments" is optional so not tested here
         return false;
     } else return testEmailValid();
 
@@ -51,7 +52,7 @@ function jsfiddleFormSubmit() {
 // this code taken from  https://jsfiddle.net/seamusleahy/rxeuaatw/
 
 
-    let formEl = document.getElementById('contact-form');
+    let formEl = document.getElementById('exampleForm');
     console.log("hello from line 51 of app.js")
 
 //formEl.addEventListener('submit', function(event) {
@@ -67,19 +68,21 @@ function jsfiddleFormSubmit() {
 // Here we will use the same format the browser submits POST forms.
 // You could use a different format, depending on your server, such
 // as JSON or XML.
-    let formData = new FormData();
-    for (let i = 0; i < formEl.length; ++i) {
-        formData.append(formEl[i].name, formEl[i].value);
-    }
+    let formData = new FormData(formEl);
+    // for (let i = 0; i < formEl.length; ++i) {
+    //     formData.append(formEl[i].name, formEl[i].value);
+    // }
 
 // This is for the purpose of this demo using jsFiddle AJAX Request endpoint
-    //// I don't need this
-    // formData.append('json', JSON.stringify({example: 'return value'}));
+    // I don't need this ?
+    formData.append('json', JSON.stringify({example: 'return value'}));
 
 // 2. Make the request
 // ================================
 ////let url = '/echo/json/';
-    let url = 'https://formspree.io/mgevzpbq';
+//     let url = "fake.fakestreet.com"
+    let url = "https://formspree.io/mgevzpbq"
+
     let fetchOptions = {
         method: 'POST',
         headers,

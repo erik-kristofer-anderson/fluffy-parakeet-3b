@@ -76,13 +76,13 @@
 
 
 
-    <form id="exampleForm" class="my-form-style">
+    <form id="exampleForm" class="my-form-style" novalidate>
         <h2> I take Suggestions!</h2>
         <p> Use the form below to suggest a painting idea. Suggest music for inspiration and a few colors you'd like me to use. If I paint it I'll send you a photo.</p>
         <div class="row">
             <div class="form-group col">
                 <label for="exampleInputName">Name</label>
-                <input type="email" class="form-control" id="exampleInputName">
+                <input type="text" class="form-control" id="exampleInputName">
             </div>
             <div class="form-group col">
                 <label for="exampleInputEmail1">Email address</label>
@@ -102,7 +102,7 @@
         </div>
 
         <div class="form-group">
-            <label for="exampleFormComments">Comments</label>
+            <label for="exampleFormComments">Comments(optional)</label>
             <textarea class="form-control" id="exampleFormComments" rows="3"></textarea>
         </div>
 
@@ -115,7 +115,8 @@
 
 
         <div class="alert alert-warning d-none" role="alert" id = "my-failure-alert">
-            Invalid Submission; please try again. (Hint: all fields should be populated and the email should be valid. [todo: add email format validator])
+            Invalid Submission; please try again. (Hint: all fields except comments should be populated.
+<!--            and the email should be valid. [todo: add email format validator])-->
         </div>
 
         <div class="alert alert-danger d-none" role="alert" id = "results">

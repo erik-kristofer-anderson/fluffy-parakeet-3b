@@ -32,3 +32,12 @@ note: skipping the more bootstrap portion for now
 Using javascript provided by formspree for form submission with ajax
 https://formspree.io/
 To see the instructions you need to make a (free) form reciever
+
+
+// note: I got this code from elly but found it wasn't needed
+// function myAppOnLoad() {
+//     $('alert').alert();
+// }
+//
+//
+// document.addEventListener('onload', myAppOnLoad);

@@ -74,10 +74,10 @@
         <!--    <br>-->
     </div>
 
-    <div class="my-form-style" id="contact-form" action="https://formspree.io/mgevzpbq" method="POST">
+    <div class="my-form-style" >
         <h2> I take Suggestions!</h2>
         <p> Use the form below to suggest a painting idea. Suggest music for inspiration and a few colors you'd like me to use. If I paint it I'll send you a photo.</p>
-        <form  method="POST" novalidate>
+        <form  id="contact-form" action="https://formspree.io/mgevzpbq" method="POST" novalidate>
             <div class="row">
                 <div class="col-sm">
                     <label for="contact-music">Music</label>
@@ -104,19 +104,26 @@
                     <input  type="submit" value="Submit" id="my-form-button">
                 </div>
             </div>
-<!--        from formspree instructions:-->
-            <p id="my-form-status"></p>
-<!--            //end from formspree instructions-->
 
         </form>
         <div id="my-success-alert"  class="alert alert-success d-none" role="alert">
-            Thank you! Your suggestion has been submitted.
+            Your submission has passed the basic validation tests.
         </div>
 
 
         <div class="alert alert-warning d-none" role="alert" id = "my-failure-alert">
             Invalid Submission; please try again. (Hint: all fields should be populated and the email should be valid. [todo: add email format validator])
         </div>
+
+        <div class="alert alert-danger d-none" role="alert" id = "results">
+            This is place-holder text.
+        </div>
+
+        <div class="alert alert-warning d-none" role="alert" id = "success-from-form-spree">
+            Your response has been recieved by our server!
+        </div>
+<!--        <p id = "results"></p>-->
+
     </div>
 
     <br>

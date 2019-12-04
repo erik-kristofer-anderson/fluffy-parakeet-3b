@@ -25,8 +25,6 @@ function resetPageViews() {
 }
 
 
-
-
 function incrementPageViews () {
     let num;
     let pageViews = localStorage.getItem("numPageViews");

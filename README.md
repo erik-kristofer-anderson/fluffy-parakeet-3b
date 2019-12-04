@@ -25,7 +25,10 @@ TODO: add event listeners to make functions go when page is loaded
 
 note: skipping the more bootstrap portion for now
 
-        // from formspree instructions:
-            <p id="my-form-status"></p>
-            //end from formspree instructions
-        
+// from formspree instructions:
+<p id="my-form-status"></p>
+//end from formspree instructions
+
+Using javascript provided by formspree for form submission with ajax
+https://formspree.io/
+To see the instructions you need to make a (free) form reciever
